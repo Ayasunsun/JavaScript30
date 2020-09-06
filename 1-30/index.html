@@ -52,5 +52,25 @@
     </div>
   </div>
 
+  <audio data-key="65" src="sounds/bang.wav"></audio>
+  <audio data-key="83" src="sounds/clang.wav"></audio>
+  <audio data-key="68" src="sounds/drip.wav"></audio>
+  <audio data-key="70" src="sounds/fall.wav"></audio>
+  <audio data-key="71" src="sounds/falling.wav"></audio>
+  <audio data-key="72" src="sounds/ping.wav"></audio>
+  <audio data-key="74" src="sounds/run.wav"></audio>
+  <audio data-key="75" src="sounds/spring.wav"></audio>
+  <audio data-key="76" src="sounds/whip.wav"></audio>
+
+  <script>
+    window.addEventListener('keydown',function(e){
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+    });
+
+  </script>
+
+
+
 </body>
 </html>

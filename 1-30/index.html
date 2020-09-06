@@ -3,51 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS cartoon sounds</title>
+  <title>JS fairy tail sounds</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
   <div class="main-container">
-    <div>
-      <h2 class="text-center mt-2">Play with cartoony sounds🍿🎬</h2>
-    </div>
-    <div class="keys">
+    <div class="keys d-flex">
       <div data-key="65" class="key">
         <kbd>A</kbd>
-        <span class="sound"></span>
+        <span class="sound">🦄</span>
       </div>
       <div data-key="83" class="key">
         <kbd>S</kbd>
-        <span class="sound"></span>
+        <span class="sound">🦋</span>
       </div>
       <div data-key="68" class="key">
         <kbd>D</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧚‍♀️</span>
       </div>
       <div data-key="70" class="key">
         <kbd>F</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧝‍♀️</span>
       </div>
       <div data-key="71" class="key">
         <kbd>G</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧙‍♂️</span>
       </div>
       <div data-key="72" class="key">
         <kbd>H</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧛</span>
       </div>
       <div data-key="74" class="key">
         <kbd>J</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧜‍♀️</span>
       </div>
       <div data-key="75" class="key">
         <kbd>K</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧞‍♂️</span>
       </div>
       <div data-key="76" class="key">
         <kbd>L</kbd>
-        <span class="sound"></span>
+        <span class="sound">🧚</span>
       </div>
     </div>
   </div>
@@ -63,13 +60,24 @@
   <audio data-key="76" src="sounds/bell9.mp3"></audio>
 
   <script>
-    window.addEventListener('keydown',function(e){
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`div[data-key="${e.keyCode}"`);
-      if (!audio) return;
-      audio.play();
-    });
 
+    function playSound(e){
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"`);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add('playing');
+    }
+
+    function removeTransition(e){
+      if(e.propertyName !== 'transform') return;
+      this.classList.remove('playing');
+    }
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
   </script>
 
 

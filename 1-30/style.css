@@ -1,23 +1,33 @@
-body{
-  background-image: linear-gradient(305deg, hsl(151,59%,76%),hsl(202.429,59%,76%),hsl(253.857,59%,76%),hsl(305.286,59%,76%),hsl(356.714,59%,76%),hsl(48.143,59%,76%),hsl(99.571,59%,76%));
+html{
+   background-image: linear-gradient(305deg, hsl(151,59%,76%),hsl(202.429,59%,76%),hsl(253.857,59%,76%),hsl(305.286,59%,76%),hsl(356.714,59%,76%),hsl(48.143,59%,76%),hsl(99.571,59%,76%));
+   background-size: cover;
+ }
+
+body {
   font-family: sans-serif;
   font-size: 10px;
-  margin: 0;
+  margin: auto;
   padding: 0;
+}
+
+.keys {
+  display: flex;
+  margin: 20% 30%;
 }
 
 .key {
   border: .4rem solid rgba(184, 158, 229, 0.4);
-  border-radius: .5rem;
-  margin: 1rem;
+  border-radius: 50px;
+  margin: .1rem;
   font-size: 1.5rem;
   padding: 1rem .5rem;
   transition: all .9s ease;
-  width: 10rem;
+  width: 6rem;
   text-align: center;
   color: white;
   background: rgba(158, 203, 230, 0.4);
   text-shadow: 0 0 .5rem black;
+
 }
 
 .playing {
@@ -29,14 +39,7 @@ body{
 kbd {
   display: block;
   font-size: 4rem;
-  background: none;
+  background-color:none;
   color: pink;
-}
-
-.sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
-}
+ }
 

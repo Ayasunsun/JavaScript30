@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS fairy tail sounds</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="style.js"></script>
 <body>
   <div class="main-container">
     <div class="keys">
@@ -57,7 +58,7 @@
   <audio data-key="75" src="sounds/bell8.mp3"></audio>
   <audio data-key="76" src="sounds/bell9.mp3"></audio>
 
-  <script>
+ <script>
 
     function playSound(e){
       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -77,8 +78,6 @@
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
     window.addEventListener('keydown', playSound);
   </script>
-
-
 
 </body>
 </html>

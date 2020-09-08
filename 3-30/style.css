@@ -1,1 +1,28 @@
-style.css
+
+:root {
+  --base: yellow;
+  --spacing: 10px;
+  --blur: 10px;
+}
+
+img {
+  width: 460px;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+
+}
+
+body {
+  text-align: center;
+  background-color: rgb(53, 32, 94, 0.8);
+}
+
+.hl {
+  color: var(--base);
+}
+
+.control {
+  padding: 5px 0 27px 0;
+  color: white;
+}
